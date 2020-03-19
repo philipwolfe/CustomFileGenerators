@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+	<TemplateData>
+		<Name>Observable Property Class</Name>
+		<Description>A class that has example code for creating Observable Properties.</Description>
+		<Icon>ObservablePropertyItemTemplate.ico</Icon>
+		<TemplateID>85e4003e-7895-41ad-a340-47e1050a8361</TemplateID>
+		<TemplateGroupID>Silverlight</TemplateGroupID>
+		<ProjectType>CSharp</ProjectType>
+		<RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+		<DefaultName>Class.cs</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<References>
+			<Reference>
+				<Assembly>System</Assembly>
+			</Reference>
+		</References>
+
+		<ProjectItem ReplaceParameters="true" CustomTool="ObsPropGen" TargetFileName="$fileinputname$.cs">Class.cs</ProjectItem>
+	</TemplateContent>
+</VSTemplate>

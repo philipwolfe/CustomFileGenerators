@@ -1,0 +1,147 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservablePropertyGenerator", "ObservablePropertyGenerator\ObservablePropertyGenerator\ObservablePropertyGenerator.csproj", "{A2ED7727-025E-4112-83FA-8AC82CD8D87D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5F05E82B-ADEA-45DA-B146-1100FE8665C0}"
+	ProjectSection(SolutionItems) = preProject
+		Solution Items\CustomFileGenerators.snk = Solution Items\CustomFileGenerators.snk
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ObservablePropertyGenerator", "ObservablePropertyGenerator", "{3BA486A5-478F-470A-AB05-7581F3E11EC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservablePropertyAttributes", "ObservablePropertyGenerator\ObservablePropertyAttributes\ObservablePropertyAttributes.csproj", "{939C06B1-1DEF-4C2E-ACA7-A67914C27F14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservablePropertyGeneratorTests", "ObservablePropertyGenerator\ObservablePropertyGeneratorTests\ObservablePropertyGeneratorTests.csproj", "{5E4E956B-073D-400A-9B5E-6255FE82393B}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ObservablePropertyGeneratorSetup", "ObservablePropertyGenerator\ObservablePropertyGeneratorSetup\SLFileGeneratorsSetup.vdproj", "{C71091B3-4580-4FBA-85C8-8B10BBF84CB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservablePropertyItemTemplate", "ObservablePropertyGenerator\ObservablePropertyItemTemplate\ObservablePropertyItemTemplate.csproj", "{B9B870CE-9D2B-41A8-A328-15EA2AEC919E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItemTemplateInstaller", "ObservablePropertyGenerator\ItemTemplateInstaller\ItemTemplateInstaller.csproj", "{A4B36E78-A284-4EE6-8279-5DFEC04847E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservablePropertyAttributes.SL4", "ObservablePropertyGenerator\ObservablePropertyAttributes.SL4\ObservablePropertyAttributes.SL4.csproj", "{DFC69DD3-A055-47BB-BDF8-057A99EC17C7}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs07
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ObservablePropertyGenerator\\ItemTemplateInstaller\\ItemTemplateInstaller.csproj
+		SccProjectTopLevelParentUniqueName1 = CustomFileGenerators.sln
+		SccProjectName1 = ObservablePropertyGenerator/ItemTemplateInstaller
+		SccLocalPath1 = ObservablePropertyGenerator\\ItemTemplateInstaller
+		SccProjectUniqueName2 = ObservablePropertyGenerator\\ObservablePropertyAttributes.SL4\\ObservablePropertyAttributes.SL4.csproj
+		SccProjectTopLevelParentUniqueName2 = CustomFileGenerators.sln
+		SccProjectName2 = ObservablePropertyGenerator/ObservablePropertyAttributes.SL4
+		SccLocalPath2 = ObservablePropertyGenerator\\ObservablePropertyAttributes.SL4
+		SccProjectUniqueName3 = ObservablePropertyGenerator\\ObservablePropertyAttributes\\ObservablePropertyAttributes.csproj
+		SccProjectTopLevelParentUniqueName3 = CustomFileGenerators.sln
+		SccProjectName3 = ObservablePropertyGenerator/ObservablePropertyAttributes
+		SccLocalPath3 = ObservablePropertyGenerator\\ObservablePropertyAttributes
+		SccProjectUniqueName4 = ObservablePropertyGenerator\\ObservablePropertyGenerator\\ObservablePropertyGenerator.csproj
+		SccProjectTopLevelParentUniqueName4 = CustomFileGenerators.sln
+		SccProjectName4 = ObservablePropertyGenerator/ObservablePropertyGenerator
+		SccLocalPath4 = ObservablePropertyGenerator\\ObservablePropertyGenerator
+		SccProjectUniqueName5 = ObservablePropertyGenerator\\ObservablePropertyGeneratorSetup\\SLFileGeneratorsSetup.vdproj
+		SccProjectTopLevelParentUniqueName5 = CustomFileGenerators.sln
+		SccProjectName5 = ObservablePropertyGenerator/ObservablePropertyGeneratorSetup
+		SccLocalPath5 = ObservablePropertyGenerator\\ObservablePropertyGeneratorSetup
+		SccProjectUniqueName6 = ObservablePropertyGenerator\\ObservablePropertyGeneratorTests\\ObservablePropertyGeneratorTests.csproj
+		SccProjectTopLevelParentUniqueName6 = CustomFileGenerators.sln
+		SccProjectName6 = ObservablePropertyGenerator/ObservablePropertyGeneratorTests
+		SccLocalPath6 = ObservablePropertyGenerator\\ObservablePropertyGeneratorTests
+		SccProjectUniqueName7 = ObservablePropertyGenerator\\ObservablePropertyItemTemplate\\ObservablePropertyItemTemplate.csproj
+		SccProjectTopLevelParentUniqueName7 = CustomFileGenerators.sln
+		SccProjectName7 = ObservablePropertyGenerator/ObservablePropertyItemTemplate
+		SccLocalPath7 = ObservablePropertyGenerator\\ObservablePropertyItemTemplate
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2ED7727-025E-4112-83FA-8AC82CD8D87D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2ED7727-025E-4112-83FA-8AC82CD8D87D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2ED7727-025E-4112-83FA-8AC82CD8D87D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A2ED7727-025E-4112-83FA-8AC82CD8D87D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A2ED7727-025E-4112-83FA-8AC82CD8D87D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A2ED7727-025E-4112-83FA-8AC82CD8D87D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2ED7727-025E-4112-83FA-8AC82CD8D87D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2ED7727-025E-4112-83FA-8AC82CD8D87D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A2ED7727-025E-4112-83FA-8AC82CD8D87D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A2ED7727-025E-4112-83FA-8AC82CD8D87D}.Release|x86.ActiveCfg = Release|Any CPU
+		{939C06B1-1DEF-4C2E-ACA7-A67914C27F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939C06B1-1DEF-4C2E-ACA7-A67914C27F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939C06B1-1DEF-4C2E-ACA7-A67914C27F14}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{939C06B1-1DEF-4C2E-ACA7-A67914C27F14}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{939C06B1-1DEF-4C2E-ACA7-A67914C27F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939C06B1-1DEF-4C2E-ACA7-A67914C27F14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{939C06B1-1DEF-4C2E-ACA7-A67914C27F14}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{939C06B1-1DEF-4C2E-ACA7-A67914C27F14}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{939C06B1-1DEF-4C2E-ACA7-A67914C27F14}.Release|x86.ActiveCfg = Release|Any CPU
+		{5E4E956B-073D-400A-9B5E-6255FE82393B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E4E956B-073D-400A-9B5E-6255FE82393B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E4E956B-073D-400A-9B5E-6255FE82393B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5E4E956B-073D-400A-9B5E-6255FE82393B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5E4E956B-073D-400A-9B5E-6255FE82393B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5E4E956B-073D-400A-9B5E-6255FE82393B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E4E956B-073D-400A-9B5E-6255FE82393B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5E4E956B-073D-400A-9B5E-6255FE82393B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5E4E956B-073D-400A-9B5E-6255FE82393B}.Release|x86.ActiveCfg = Release|Any CPU
+		{C71091B3-4580-4FBA-85C8-8B10BBF84CB4}.Debug|Any CPU.ActiveCfg = Debug
+		{C71091B3-4580-4FBA-85C8-8B10BBF84CB4}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{C71091B3-4580-4FBA-85C8-8B10BBF84CB4}.Debug|x86.ActiveCfg = Debug
+		{C71091B3-4580-4FBA-85C8-8B10BBF84CB4}.Debug|x86.Build.0 = Debug
+		{C71091B3-4580-4FBA-85C8-8B10BBF84CB4}.Release|Any CPU.ActiveCfg = Release
+		{C71091B3-4580-4FBA-85C8-8B10BBF84CB4}.Release|Any CPU.Build.0 = Release
+		{C71091B3-4580-4FBA-85C8-8B10BBF84CB4}.Release|Mixed Platforms.ActiveCfg = Release
+		{C71091B3-4580-4FBA-85C8-8B10BBF84CB4}.Release|Mixed Platforms.Build.0 = Release
+		{C71091B3-4580-4FBA-85C8-8B10BBF84CB4}.Release|x86.ActiveCfg = Release
+		{C71091B3-4580-4FBA-85C8-8B10BBF84CB4}.Release|x86.Build.0 = Release
+		{B9B870CE-9D2B-41A8-A328-15EA2AEC919E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9B870CE-9D2B-41A8-A328-15EA2AEC919E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9B870CE-9D2B-41A8-A328-15EA2AEC919E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B9B870CE-9D2B-41A8-A328-15EA2AEC919E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B9B870CE-9D2B-41A8-A328-15EA2AEC919E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9B870CE-9D2B-41A8-A328-15EA2AEC919E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9B870CE-9D2B-41A8-A328-15EA2AEC919E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B9B870CE-9D2B-41A8-A328-15EA2AEC919E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B9B870CE-9D2B-41A8-A328-15EA2AEC919E}.Release|x86.ActiveCfg = Release|Any CPU
+		{A4B36E78-A284-4EE6-8279-5DFEC04847E3}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{A4B36E78-A284-4EE6-8279-5DFEC04847E3}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{A4B36E78-A284-4EE6-8279-5DFEC04847E3}.Debug|x86.ActiveCfg = Debug|x86
+		{A4B36E78-A284-4EE6-8279-5DFEC04847E3}.Debug|x86.Build.0 = Debug|x86
+		{A4B36E78-A284-4EE6-8279-5DFEC04847E3}.Release|Any CPU.ActiveCfg = Release|x86
+		{A4B36E78-A284-4EE6-8279-5DFEC04847E3}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{A4B36E78-A284-4EE6-8279-5DFEC04847E3}.Release|Mixed Platforms.Build.0 = Release|x86
+		{A4B36E78-A284-4EE6-8279-5DFEC04847E3}.Release|x86.ActiveCfg = Release|x86
+		{A4B36E78-A284-4EE6-8279-5DFEC04847E3}.Release|x86.Build.0 = Release|x86
+		{DFC69DD3-A055-47BB-BDF8-057A99EC17C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFC69DD3-A055-47BB-BDF8-057A99EC17C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFC69DD3-A055-47BB-BDF8-057A99EC17C7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DFC69DD3-A055-47BB-BDF8-057A99EC17C7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DFC69DD3-A055-47BB-BDF8-057A99EC17C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFC69DD3-A055-47BB-BDF8-057A99EC17C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFC69DD3-A055-47BB-BDF8-057A99EC17C7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DFC69DD3-A055-47BB-BDF8-057A99EC17C7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DFC69DD3-A055-47BB-BDF8-057A99EC17C7}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A2ED7727-025E-4112-83FA-8AC82CD8D87D} = {3BA486A5-478F-470A-AB05-7581F3E11EC9}
+		{939C06B1-1DEF-4C2E-ACA7-A67914C27F14} = {3BA486A5-478F-470A-AB05-7581F3E11EC9}
+		{5E4E956B-073D-400A-9B5E-6255FE82393B} = {3BA486A5-478F-470A-AB05-7581F3E11EC9}
+		{C71091B3-4580-4FBA-85C8-8B10BBF84CB4} = {3BA486A5-478F-470A-AB05-7581F3E11EC9}
+		{B9B870CE-9D2B-41A8-A328-15EA2AEC919E} = {3BA486A5-478F-470A-AB05-7581F3E11EC9}
+		{A4B36E78-A284-4EE6-8279-5DFEC04847E3} = {3BA486A5-478F-470A-AB05-7581F3E11EC9}
+		{DFC69DD3-A055-47BB-BDF8-057A99EC17C7} = {3BA486A5-478F-470A-AB05-7581F3E11EC9}
+	EndGlobalSection
+EndGlobal
