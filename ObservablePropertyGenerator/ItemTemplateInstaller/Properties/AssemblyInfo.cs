@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 #endif
 [assembly: AssemblyCompany("www.PhilipWolfe.com")]
 [assembly: AssemblyProduct("CustomFileGenerators")]
-[assembly: AssemblyCopyright("Copyright © Philip Wolfe 2011")]
+[assembly: AssemblyCopyright("Copyright © Philip Wolfe 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

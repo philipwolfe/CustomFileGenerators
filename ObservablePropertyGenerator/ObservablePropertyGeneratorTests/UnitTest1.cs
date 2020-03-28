@@ -21,7 +21,7 @@ namespace TestProject1
 
 			gen.Generate(@"input.txt", File.ReadAllText(@"input.txt"), "", mem, out output, null);
 
-			var contents = new byte[output];
+			var contents = new byte[output]; 
 			Marshal.Copy(mem[0], contents, 0, (int)output);
 
 			//File.WriteAllBytes("run.txt", contents);

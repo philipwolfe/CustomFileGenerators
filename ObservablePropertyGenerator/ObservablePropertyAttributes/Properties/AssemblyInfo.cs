@@ -14,11 +14,11 @@ using System.Runtime.InteropServices;
 #endif
 [assembly: AssemblyCompany("www.PhilipWolfe.com")]
 [assembly: AssemblyProduct("CustomFileGenerators")]
-[assembly: AssemblyCopyright("Copyright © Philip Wolfe 2011")]
+[assembly: AssemblyCopyright("Copyright © Philip Wolfe 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 [assembly: ComVisible(false)]
 
-[assembly: AssemblyVersion("1.1.0.0")]
-[assembly: AssemblyFileVersion("1.1.0.0")]
+[assembly: AssemblyVersion("1.3.0.0")]
+[assembly: AssemblyFileVersion("1.3.0.0")]

@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace Namespace1.Tests
 {
-	public partial class TestClass1
+	public partial class TestClass1<T, TT>:IComparable where T : IList<int>
 	{
 		// test 1
 		[GenerateObservableProperty()]
@@ -81,6 +81,31 @@ namespace Namespace1.Tests
 		// test 15
 		[GenerateObservablePropertyAttribute]
 		byte _b = new byte();//comment
+
+		// test 16
+		[GenerateObservableProperty]
+		T _theT;
+
+		// test 17
+		[GenerateObservableProperty]
+		Dictionary<int, TT> _dict;
+
+		//test 18
+		[Obsolete(), GenerateObservableProperty]
+		int _int1;
+
+		//test 19
+		[Obsolete(),GenerateObservableProperty()]
+		int _int2;
+
+		//test 20
+		[Obsolete(),
+		GenerateObservableProperty()]
+		int _int3;
+
+		//Test21
+		[GenerateObservableProperty]
+		int _;
 
 	}
 

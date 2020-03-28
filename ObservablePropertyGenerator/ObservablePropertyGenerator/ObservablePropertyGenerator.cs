@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -69,7 +70,7 @@ namespace CustomFileGenerators
 			_indent = 0;
 			StringBuilder sb = new StringBuilder();
 
-			sb.Append(Constants.FILE_HEADER);
+			sb.Append(string.Format(Constants.FILE_HEADER, GetType().Assembly.GetName().Version, Environment.Version));
 
 			try
 			{
@@ -90,9 +91,26 @@ namespace CustomFileGenerators
 
 				//bring in first class of input file
 				var classLine = Regex.Match(inputFileContent, Constants.CLASS_REGEX).Value;
-				var className = classLine.Substring(classLine.LastIndexOf(' ') + 1).Trim();
+				//remove stuff after a : or where
+				var colonIndex = classLine.IndexOf(':');
+				if (colonIndex >= 0)
+				{
+					classLine = classLine.Substring(0, colonIndex - 1);
+				}
+				var whereIndex = classLine.IndexOf(" where ");
+				if (whereIndex >= 0)
+				{
+					classLine = classLine.Substring(0, whereIndex - 1);
+				}
+				var className = classLine.Substring("class ".Length).Trim();
 
-				sb.AppendLine(Indent + "partial " + classLine);
+				var angleIndex = className.IndexOf('<');
+				if (angleIndex >= 0)
+				{
+					className = className.Substring(0, angleIndex).Trim();
+				}
+
+				sb.AppendLine(Indent + "partial " + classLine.Trim());
 				sb.Append(Indent + "{");
 				_indent++;
 
@@ -216,33 +234,47 @@ namespace CustomFileGenerators
 						if (string.IsNullOrEmpty(properName))
 							properName = ProperName(propertyName);
 
-						properties.Add(properName);
+						if (properName != null) //invalid name
+						{
+							properties.Add(properName);
 
-						var indexOfSpaceBeforeReturnType = property.Substring(0, indexOfLastSpace - 1).LastIndexOf(' ') + 1;
-						var returnType = property.Substring(indexOfSpaceBeforeReturnType, indexOfLastSpace - indexOfSpaceBeforeReturnType - 1);
-						propertyTypes.Add(properName, returnType);
-						var formattedProperty = PropertyFormat(Indent, returnType, properName, propertyName, className);
+							var returnType = property.Substring(0, indexOfLastSpace).Trim();
+							var indexOfAngleBracket = property.IndexOf('<');
 
-						sb.AppendLine(formattedProperty);
+							var indexOfSpaceBeforeReturnType = 0;
+							if (indexOfAngleBracket >= 0)
+							{
+								indexOfSpaceBeforeReturnType = returnType.Substring(0, indexOfAngleBracket).LastIndexOf(' ');
+								if (indexOfSpaceBeforeReturnType == -1)
+									indexOfSpaceBeforeReturnType = 0;
+							}
+							else
+								indexOfSpaceBeforeReturnType = returnType.Substring(0, indexOfLastSpace - 1).LastIndexOf(' ') + 1;
+							returnType = returnType.Substring(indexOfSpaceBeforeReturnType, indexOfLastSpace - indexOfSpaceBeforeReturnType - 1).Trim();
+							propertyTypes.Add(properName, returnType);
+							var formattedProperty = PropertyFormat(Indent, returnType, properName, propertyName, className);
+
+							sb.AppendLine(formattedProperty);
+						}
 					}
 					attribIndex = NextIndexOfAttribute(inputFileContent, index);
 				}
 
 				if (properties.Count == 0)
-					return Constants.FILE_HEADER;
+                    return string.Format(Constants.FILE_HEADER, GetType().Assembly.GetName().Version, Environment.Version);
 
 				sb.AppendLine();
 				sb.AppendLine(Indent + "#region Extensibility Method Definitions");
 				foreach (var prop in properties)
 				{
-					sb.AppendLine(string.Format("{0}partial void OnBefore{1}ValueChanging({2} value);", Indent, prop, propertyTypes[prop]));
+					sb.AppendLine(string.Format("{0}partial void OnBefore{1}ValueChanging({2} value, System.ComponentModel.CancelEventArgs e);", Indent, prop, propertyTypes[prop]));
 					sb.AppendLine(string.Format("{0}partial void OnBefore{1}RaisePropertyChanged();", Indent, prop));
 					sb.AppendLine(string.Format("{0}partial void OnAfter{1}RaisePropertyChanged();", Indent, prop));
 				}
 				sb.AppendLine(Indent + "#endregion");
 
 				sb.AppendLine();
-				sb.AppendLine(Indent + "public partial class " + className + "Properties");
+				sb.AppendLine(Indent + "public static partial class " + className + "Properties");
 				sb.AppendLine(Indent + "{");
 				_indent++;
 				foreach (var prop in properties)
@@ -272,7 +304,17 @@ namespace CustomFileGenerators
 		private string ProperName(string name)
 		{
 			if (name[0] == '_')
-				return name[1].ToString().ToUpper() + name.Substring(2);
+			{
+				switch (name.Length)
+				{
+					case 1:
+						return null;
+					case 2:
+						return name[1].ToString().ToUpper();
+					default:
+						return name[1].ToString().ToUpper() + name.Substring(2);
+				}
+			}
 
 			return name[0].ToString().ToUpper() + name.Substring(1);
 		}
@@ -385,13 +427,17 @@ namespace CustomFileGenerators
 {0}	}}
 {0}	set
 {0}	{{
-{0}		if ({3} != value)
+{0}		if (!Equals({3}, value))
 {0}		{{
-{0}			OnBefore{2}ValueChanging(value);
-{0}			{3} = value;
-{0}			OnBefore{2}RaisePropertyChanged();
-{0}			RaisePropertyChanged({4}Properties.{2});
-{0}			OnAfter{2}RaisePropertyChanged();
+{0}			var e = new System.ComponentModel.CancelEventArgs();
+{0}			OnBefore{2}ValueChanging(value, e);
+{0}			if (!e.Cancel)
+{0}			{{
+{0}				{3} = value;
+{0}				OnBefore{2}RaisePropertyChanged();
+{0}				RaisePropertyChanged({4}Properties.{2});
+{0}				OnAfter{2}RaisePropertyChanged();
+{0}			}}
 {0}		}}
 {0}	}}
 {0}}}";

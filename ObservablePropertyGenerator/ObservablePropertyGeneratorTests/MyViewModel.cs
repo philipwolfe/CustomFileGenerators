@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 
 namespace TestProject1
 {
-	public partial class MyViewModel
+	public partial class MyViewModel1<T, TT> : IComparable where T : IList<int>
 	{
 		// test 1
 		[GenerateObservableProperty()]
@@ -82,8 +80,22 @@ namespace TestProject1
 		[GenerateObservablePropertyAttribute]
 		byte _b = new byte();//comment
 
+
+		// test 16
+		[GenerateObservableProperty]
+		T _theT;
+
+		// test 17
+		[GenerateObservableProperty]
+		Dictionary<int, T> _dict;
+
 		private void RaisePropertyChanged(string property)
 		{}
+
+		public int CompareTo(object o)
+		{
+			return 0;
+		}
 	}
 
 	public class Section
